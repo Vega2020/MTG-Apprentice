@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apprentice</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+
+<!-- will eventually want navbar funtionality but doesn't do anything yet -->
+<nav class="navbar navbar-dark bg-dark">
+    <span class="navbar-brand mb-0 h1">MTG Apprentice</span>
+</nav>
+
+<container> <!-- primary container -->
+    <div class="row">
+        <div class="col-md-3"> <!-- opening bracket for left column -->
+            <!-- code for search form starts here, it will take a lot of work to make this form functional -->
+            <form
+            class="input-group bd-search d-flex align-items-center"
+            id="searchForm">
+            <span
+              class="algolia-autocomplete"
+              style="position: relative; display: inline-block; direction: ltr;"
+            >
+            <input
+            type="text"
+            class="form-control ds-input"
+            id="search-input"
+            placeholder="Search card or category:"
+            aria-label="Search for..."
+            autocomplete="off"
+            spellcheck="false"
+            style="position: relative; vertical-align: top;"
+          />
+          <div class="input-group-append">
+            <span class="input-group-text" id="searchButton">Fetch!</span>
+          </div>
+          <span
+            class="ds-dropdown-menu"
+            role="listbox"
+            id="algolia-autocomplete-listbox-0"
+            style="
+              position: absolute;
+              top: 100%;
+              z-index: 100;
+              display: none;
+              left: 0px;
+              right: auto;
+            "
+            ><div class="ds-dataset-1"></div>
+            </span>
+            </span>
+            <br /><br />
+        </form> <!-- closing bracket for search form -->
+        </div> <!-- closing bracket for left column -->
+
+        <!-- here's a UL to populate with decks when the page loads -->
+        <ul class="list-group" id="deckHistory">
+        </ul>
+
+        <div class="col-md-9"> <!-- opening bracket for right column -->
+            
+            <!-- column containing main display starts below, five day forecast cards will go under it in the same column -->
+            <div class="col-md-9 right-column">
+              <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                  <!-- these divs are linked to the ajax function in our js document -->
+                  <div class="display-4 city"></div><div id="weatherIconDisplay"></div>
+                  <br />
+                  <div class="wind"></div>
+                  <div class="humidity"></div>
+                  <div class="temp"></div>
+                  <div id="UVdisplay"></div>
+                </div>
+                <br>
+        </div> <!-- closing bracket for right column -->
+    </div> <!-- closing bracket for top row -->
+
+
+
+</container> <!-- close primary container -->
+
+<!-- might be referencing two different jquery libraries (slim and min), keep this in mind in case it causes problems -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+</body>
+</html>
