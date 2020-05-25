@@ -1,0 +1,13 @@
+<!-- initial attempt to load mtgJson using XML: -->
+let cardDatabase = 'https://file:///C:/Users/flowe/code/myProjects/MTG-Apprentice/AllPrintings.json';
+
+let request = new XMLHttpRequest(); 
+request.open('GET', cardDatabase);
+request.responseType = 'json';
+request.send();
+
+request.onload = function() {
+    const allCards = request.response;
+    populateHeader(allCards);
+    console.log(allCards)
+}
